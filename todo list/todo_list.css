@@ -8,8 +8,75 @@ input[type=text] {
     border: 2px solid orange;
     border-radius: 4px;
     display: inline;
-    margin: 3px 6px;
+    margin: 10px 0 5px 0;
 }
-.todo-list-item > * {
+#add-list-item-container > * {
     vertical-align: middle;
+}
+[data-icon=plus] {
+    cursor: pointer;
+}
+#todo-list {
+    padding: 10px;
+    min-height: 100px;
+    background-color: rgba(255,165,0,.4);
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+.list-item {
+    border-bottom: solid 2px rgba(255,165,0,.5);
+    line-height: 150%;
+}
+
+label[class=checkbox] {
+    position: relative;
+    cursor: pointer;
+    padding-left: 1.6em;
+    font-size: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.list-item input[type=checkbox] {
+    display: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.14em;
+    height: 1.14em;
+    background-color: #eee;
+}
+
+label[class=checkbox]:hover .checkmark{
+    background-color: #ccc;
+}
+
+label[class=checkbox] input ~ .checkmark {
+    background-color: rgba(255,165,0,.5);
+    border-radius: 25%;
+}
+
+label[class=checkbox] .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+label[class=checkbox] input:checked ~ .checkmark:after {
+    display: block;
+}
+
+label[class=checkbox] .checkmark:after {
+    left: .41em;
+    top: .23em;
+    width: .23em;
+    height: .45em;
+    border: solid white;
+    border-width: 0 .16em .16em 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
